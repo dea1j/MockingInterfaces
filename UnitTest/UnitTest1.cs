@@ -17,7 +17,6 @@ namespace UnitTest
             mock.Setup(t => t.Send("", "")).Returns(new HttpResponseMessage(HttpStatusCode.OK));
             var requester = new Requester(mock.Object);
             var result = requester.SendDummyRequest();
-
             Assert.Equal("Ok", result);
         }
 
@@ -28,7 +27,6 @@ namespace UnitTest
             mock.Setup(t => t.Send("", "")).Returns(new HttpResponseMessage(HttpStatusCode.BadRequest));
             var requester = new Requester(mock.Object);
             var result = requester.SendDummyRequest();
-
             Assert.Equal("NotOk", result);
         }
     }
